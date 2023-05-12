@@ -1,6 +1,6 @@
 <template>
     <div class="product-card">
-        <img src="https://placehold.co/400" alt="Product Name">
+        <img src="https://placehold.co/200" alt="Product Name">
         <h3>{{ product.name }}</h3>
         <p class="price">&euro; {{ product.price }}</p>
         <p>
