@@ -7,7 +7,9 @@ import type { productDTO } from "@/types/productDTO"
 const product: productDTO = {
   name: "test",
   price: 20,
-  store: "ah"
+  company: {name: "ah"},
+  created_on: new Date(),
+  last_modified: new Date()
 }
 
 describe('ProductItem', () => {

@@ -1,7 +1,9 @@
 
 
 export type productDTO = {
-    name: string,
-    price: number
-    store: string
+  company: {name: string}
+  name: string,
+  price: number,
+  created_on: Date,
+  last_modified: Date
 }

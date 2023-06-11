@@ -4,7 +4,7 @@
         <h3>{{ product.name }}</h3>
         <p class="price">&euro; {{ product.price }}</p>
         <p>
-            Cheapest at: {{ product.store }}
+            Cheapest at: {{ product.company.name }}
         </p>
     </div>
 </template>
