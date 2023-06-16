@@ -1,12 +1,14 @@
 <template>
+  <div class="product-wrapper">
     <div class="product-card">
         <img src="https://placehold.co/200" alt="Product Name">
         <h3>{{ product.name }}</h3>
-        <p class="price">&euro; {{ product.price }}</p>
+        <p class="price">&euro; {{ product.cheapestAtPrice }}</p>
         <p>
-            Cheapest at: {{ product.store }}
+            Store: {{ product.cheapestAtCompany.name }}
         </p>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +20,10 @@ defineProps<{
 </script>
 
 <style scoped>
+
+.product-wrapper {
+  display: inline-block;
+}
 
 .product-card {
   border: 1px solid #ccc;
