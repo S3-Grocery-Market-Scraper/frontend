@@ -16,10 +16,12 @@ productStore.readAll()
 .products {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 body {
   background-color: lightgray;
+  font-family: Tahoma, sans-serif;
 }
 
 </style>

@@ -7,11 +7,31 @@ export const useProductStore = defineStore('product', () => {
   const products = reactive<productDTO[]>([])
 
   async function readAll() {
-    const response = await fetch('http://localhost:8001/api/v1/company/647071173a40f625d7eef24a/product')
+    const response = await fetch('http://localhost:8000/api/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        query: `
+          query readAllProductModels {
+            productModels {
+              name
+              cheapestAtCompany {
+                name
+              }
+              cheapestAtPrice
+            }
+          }
+        `
+      })
+    })
 
-    const responseProducts = await response.json() as productDTO[]
+    const responseProducts = await response.json()
+    const productModels = responseProducts['data']['productModels'] as productDTO[]
 
-    responseProducts.forEach(product => {
+
+    productModels.forEach(product => {
       products.push(product)
     })
   }

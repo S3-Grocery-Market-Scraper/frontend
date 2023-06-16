@@ -3,7 +3,10 @@
 export type productDTO = {
   company: {name: string}
   name: string,
-  price: number,
+  cheapestAtCompany: {
+    name: string
+  }
+  cheapestAtPrice: number,
   created_on: Date,
   last_modified: Date
 }
